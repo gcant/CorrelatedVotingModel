@@ -18,7 +18,7 @@ where ```myData.csv``` is a csv of +/-1s and each row corresponds to a different
 Models 1, 2, and 3 are defined as below.
 
 ### Model 1
-$$ P( \boldsymbol{s} ) = \frac{1}{2} \left( 
+$$ P( \boldsymbol{s} \vert H, \boldsymbol{h} ) = \frac{1}{2} \left( 
 \frac{\cosh(\sum_i (H+h_i)s_i )}{ \prod_{i} 2 \cosh(H+h_i) } 
 +
 \frac{\cosh(\sum_i (H - h_i)s_i )}{ \prod_{i} 2 \cosh(H - h_i) } 
@@ -26,12 +26,12 @@ $$ P( \boldsymbol{s} ) = \frac{1}{2} \left(
 $$
 
 ### Model 2
-$$ P( \boldsymbol{s} ) = \frac{1}{Z}
+$$ P( \boldsymbol{s} \vert J ) = \frac{1}{Z}
 \exp \Big( {\textstyle \sum_{i < j}} J_{ij} s_i s_j / \sqrt{n} \Big)
 $$
 
 ### Model 3
-$$ P( \boldsymbol{s} ) = \frac{\exp \big( {\textstyle \sum_{i < j}} J_{ij} s_i s_j / \sqrt{n} \big)}{Z} \left( 
+$$ P( \boldsymbol{s} \vert H, \boldsymbol{h}, J ) = \frac{\exp \big( {\textstyle \sum_{i < j}} J_{ij} s_i s_j / \sqrt{n} \big)}{Z} \left( 
 \frac{\cosh(\sum_i (H+h_i)s_i )}{ \prod_{i} 2 \cosh(H+h_i) } 
 +
 \frac{\cosh(\sum_i (H - h_i)s_i )}{ \prod_{i} 2 \cosh(H - h_i) } 
