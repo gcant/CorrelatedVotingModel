@@ -14,7 +14,7 @@ fit_all_models(S, "myData")
 ```
 where ```myData.csv``` is a csv of +/-1's and each row corresponds to a different case.
 
-The data ```synthetic.csv``` is generated from the model without interactions, and so the model likelihood (correctly) picks *model 1*.
+The data ```synthetic.csv``` is generated from the model without interactions, and so the model evidence (correctly) picks *model 1*.
 
 Models 1, 2, and 3 are defined as below.
 
