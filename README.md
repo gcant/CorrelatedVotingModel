@@ -34,9 +34,6 @@ $$ P( \boldsymbol{s} \vert J ) = \frac{1}{Z}
 $$
 
 ### Model 3
-$$ P( \boldsymbol{s} \vert H, \boldsymbol{h}, J ) = \frac{\exp \big( {\textstyle \sum_{i < j}} J_{ij} s_i s_j / \sqrt{n} \big)}{Z} \left( 
-\frac{\cosh(\sum_i (H+h_i)s_i )}{ \prod_{i} 2 \cosh(H+h_i) } 
-+
-\frac{\cosh(\sum_i (H - h_i)s_i )}{ \prod_{i} 2 \cosh(H - h_i) } 
-\right)
+$$ P( \boldsymbol{s} \vert H, \boldsymbol{h}, J ) =  \exp \big( {\textstyle \sum_{i < j}} J_{ij} s_i s_j / \sqrt{n} \big) \left( 
+\frac{\cosh(\sum_i (H+h_i)s_i )}{ Z_1 }  + \frac{\cosh(\sum_i (H - h_i)s_i )}{ Z_2 } \right)
 $$
