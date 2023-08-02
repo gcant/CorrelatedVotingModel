@@ -15,6 +15,8 @@ fit_all_models(S, "myData")
 where ```myData.csv``` is a csv of +/-1's and each row corresponds to a different case.
 
 The data ```synthetic.csv``` is generated from the model without interactions, and so the model evidence (correctly) picks *model 1*.
+We also provide the voting data for the Second Rehnquist Court and the Roberts Court as ```rehnquist.csv```
+and ```roberts.csv``` for reproduction. These have been taken from the [SCDB](http://scdb.wustl.edu) Version 01 from 2022.
 
 Models 1, 2, and 3 are defined as below.
 
