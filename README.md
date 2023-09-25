@@ -13,6 +13,7 @@ library(rstan)
 source("fitting_fns.r")
 ```
 
+
 ### Running
 To reproduce model fits from the paper, run 
 ```R
@@ -24,11 +25,16 @@ In general, one can run:
 S = read.csv('myData.csv', header=FALSE)
 fit_all_models(S, "myData")
 ```
-where ```myData.csv``` is a csv of +/-1's and each row corresponds to a different case.
+where ```myData.csv``` is a csv of +/-1's and each row corresponds to a different case and
+"myData" is the name of the models. The model parameters are saved into CSV files into the
+```out``` directory. 
 
-The data ```synthetic.csv``` is generated from the model without interactions, and so the model evidence (correctly) picks *model 1*.
-We also provide the voting data for the Second Rehnquist Court and the Roberts Court as ```rehnquist.csv```
-and ```roberts.csv``` for reproduction. These have been taken from the [SCDB](http://scdb.wustl.edu) Version 01 from 2022.
+The data ```synthetic.csv``` is generated from the model without interactions, and so the
+model evidence (correctly) picks *model 1*.  We also provide the voting data for the
+Second Rehnquist Court and the Roberts Court as ```rehnquist1607.csv``` and
+```roberts1709.csv``` for reproduction. These have been taken from the
+[SCDB](http://scdb.wustl.edu) Version 01 from 2022 and the four digit suffix is the
+natural court identifier.
 
 
 ### Equations
