@@ -23,7 +23,7 @@ fit_all_models <- function(S, out_name) {
   map1 <- optimize_n_tries(stan_model(file = "models/model1.stan"), data, 20)
   map2 <- optimize_n_tries(stan_model(file = "models/model2.stan"), data, 20)
   map3 <- optimize_n_tries(stan_model(file = "models/model3.stan"), data, 20)
-  samples <- extract(stan(file = "models/model3.stan", data = data, chains = 1, iter = 5000))
+  samples <- extract(stan(file = "models/model3.stan", data = data, chains = 1, iter = 10000))
 
   params1 <- c(map1$par$H, map1$par$h)
   params2 <- map2$par$j

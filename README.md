@@ -15,12 +15,16 @@ source("fitting_fns.r")
 
 
 ### Running
-To reproduce model fits from the paper, run 
-```R
+To reproduce model fits from the paper, run in bash
+```bash
 Rscript run_all_fits.r
 ```
+or from within the R-terminal
+```R
+source('run_all_fits.r')
+```
 
-In general, one can run:
+For any specific data set, one can run
 ```R
 S = read.csv('myData.csv', header=FALSE)
 fit_all_models(S, "myData")
@@ -32,10 +36,26 @@ where ```myData.csv``` is a csv of +/-1's and each row corresponds to a differen
 The data ```synthetic.csv``` is generated from the model without interactions, and so the
 model evidence (correctly) picks *model 1*.  We also provide the voting data for the
 Second Rehnquist Court and the Roberts Court as ```rehnquist1607.csv``` and
-```roberts1709.csv``` for reproduction. These have been taken from the
+```roberts1709.csv``` for reproduction. The corresponding justice initials are in
+```rehnquist1607_initials.txt``` and ```roberts1709_initials.txt```. These have been taken from the
 [SCDB](http://scdb.wustl.edu) Version 01 from 2022 and the four digit suffix is the
-natural court identifier.
+[natural court identifier](http://scdb.wustl.edu/documentation.php?var=naturalCourt).
 
+
+### Compiled output
+Individual fields from model 3 are in the CSV file ```analysis/h_i.csv```. This can be
+read in R using
+```R
+df_read <- read.csv("analysis/h_i.csv", row.names = 1)
+```
+and in Python using pandas
+```python
+df = pd.read_csv('analysis/h_i.csv', index_col=0)
+```
+The column named ```H``` is the unanimity field.
+
+Note that there is ambiguity with respect to the sign of the individual field, so we have
+oriented unanimity field H to be positive.
 
 ### Equations
 Models 1, 2, and 3 are defined as below.
