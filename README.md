@@ -58,7 +58,7 @@ Note that there is ambiguity with respect to the sign of the individual field, s
 oriented unanimity field H to be positive.
 
 ### Equations
-Models 1, 2, and 3 are defined as below.
+Models are defined as below.
 
 #### Model 1
 $$ P( \boldsymbol{s} \vert H, \boldsymbol{h} ) = \frac{1}{2} \left( 
